@@ -23,12 +23,10 @@ export default function Signup() {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="mx-auto h-10 w-auto"
-            src="/ecommerce.png"
-            alt="Your Company"
+            src="/logo.svg"
+            alt="Logo"
           />
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Create a New Account
-          </h2>
+          <h2 className="section-title">Sign up for an account</h2>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -48,15 +46,15 @@ export default function Signup() {
             })}
           >
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Email address
-              </label>
+              <label htmlFor="email" className="label">Email address</label>
               <div className="mt-2">
                 <input
                   id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  className="input-field"
                   {...register('email', {
                     required: 'email is required',
                     pattern: {
@@ -64,27 +62,21 @@ export default function Signup() {
                       message: 'email not valid',
                     },
                   })}
-                  type="email"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {errors.email && (
-                  <p className="text-red-500">{errors.email.message}</p>
-                )}
+                {errors.email && <p className="text-error">{errors.email.message}</p>}
               </div>
             </div>
 
             <div>
-              <div className="flex items-center justify-between">
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  Password
-                </label>
-              </div>
+              <label htmlFor="password" className="label">Password</label>
               <div className="mt-2">
                 <input
                   id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  className="input-field"
                   {...register('password', {
                     required: 'password is required',
                     pattern: {
@@ -95,47 +87,35 @@ export default function Signup() {
                       - Can contain special characters`,
                     },
                   })}
-                  type="password"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {errors.password && (
-                  <p className="text-red-500">{errors.password.message}</p>
-                )}
+                {errors.password && <p className="text-error">{errors.password.message}</p>}
               </div>
             </div>
 
             <div>
-              <div className="flex items-center justify-between">
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  Confirm Password
-                </label>
-              </div>
+              <label htmlFor="confirmPassword" className="label">Confirm Password</label>
               <div className="mt-2">
                 <input
                   id="confirmPassword"
+                  name="confirmPassword"
+                  type="password"
+                  autoComplete="new-password"
+                  required
+                  className="input-field"
                   {...register('confirmPassword', {
                     required: 'confirm password is required',
                     validate: (value, formValues) =>
                       value === formValues.password || 'password not matching',
                   })}
-                  type="password"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {errors.confirmPassword && (
-                  <p className="text-red-500">
-                    {errors.confirmPassword.message}
-                  </p>
-                )}
+                {errors.confirmPassword && <p className="text-error">{errors.confirmPassword.message}</p>}
               </div>
             </div>
 
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="btn-primary"
               >
                 Sign Up
               </button>
@@ -146,7 +126,7 @@ export default function Signup() {
             Already a Member?{' '}
             <Link
               to="/login"
-              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+              className="link-primary"
             >
               Log In
             </Link>

@@ -42,6 +42,10 @@ function Footer() {
           </div>
         </div>
       </div>
+      <footer className="card mt-8">
+        <h2 className="section-title">Footer</h2>
+        <div className="mt-4 text-center text-gray-500">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</div>
+      </footer>
     </>
   );
 }
