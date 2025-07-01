@@ -117,7 +117,7 @@ export default function ProductDetail() {
 
           {/* Image gallery */}
           <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-            <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
+            <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block border-4 border-indigo-500">
               <img
                 src={product.images[0]}
                 alt={product.title}
@@ -125,14 +125,14 @@ export default function ProductDetail() {
               />
             </div>
             <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-              <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
+              <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg border-4 border-indigo-500">
                 <img
                   src={product.images[1]}
                   alt={product.title}
                   className="h-full w-full object-cover object-center"
                 />
               </div>
-              <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
+              <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg border-4 border-indigo-500">
                 <img
                   src={product.images[2]}
                   alt={product.title}
@@ -140,7 +140,7 @@ export default function ProductDetail() {
                 />
               </div>
             </div>
-            <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
+            <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg border-4 border-indigo-500">
               <img
                 src={product.images[3]}
                 alt={product.title}
@@ -151,9 +151,9 @@ export default function ProductDetail() {
 
           {/* Product info */}
           <div className="max-w-3xl mx-auto mt-12">
-            <div className="card">
+            <div className="card border-4 border-indigo-500">
               <h1 className="section-title">Product Detail</h1>
-              <img src={product.thumbnail} alt={product.title} className="w-full h-64 object-cover rounded-t-md" />
+              <img src={product.thumbnail} alt={product.title} className="w-full h-64 object-cover rounded-t-md border-b-2 border-indigo-300" />
               <div className="mt-4">
                 <h2 className="text-lg font-semibold text-gray-900">{product.title}</h2>
                 <p className="text-sm text-gray-500">{product.category}</p>

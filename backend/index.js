@@ -95,9 +95,9 @@ server.post('/webhook', express.raw({ type: 'application/json' }), async (reques
 });
 
 // Routes
-server.use('/products', isAuth, productsRouter);
-server.use('/categories', isAuth, categoriesRouter);
-server.use('/brands', isAuth, brandsRouter);
+server.use('/products', productsRouter);
+server.use('/categories', categoriesRouter);
+server.use('/brands', brandsRouter);
 server.use('/users', isAuth, usersRouter);
 server.use('/auth', authRouter);
 server.use('/cart', isAuth, cartRouter);
